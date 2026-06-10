@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useAccount, useBalance, useDisconnect } from "wagmi";
 import { useAppKit } from "@reown/appkit/react";
 import { shortenAddress, formatBalance } from "./_libs/utils";
+import { SendTransaction } from "./_components/SendTransaction";
 
 export default function HomePage() {
   const [mounted, setMounted] = useState(false);
@@ -111,6 +112,9 @@ function WalletSection() {
         </div>
       </div>
 
+      {/* Send Transaction via Smart Account (EIP-5792) */}
+      <SendTransaction />
+
       {/* Quick Actions */}
       <div className="border border-base-border bg-background-4 p-6">
         <h2 className="text-xs text-muted-2 uppercase tracking-wider mb-4">Quick Actions</h2>
@@ -183,7 +187,8 @@ function DisconnectedState() {
         Connect Your Wallet
       </h2>
       <p className="text-sm text-muted-2 mb-8 max-w-sm">
-        Connect your wallet to manage your assets, send tokens, swap, and more.
+        Connect with Google to get a smart account, or use any wallet.
+        Smart accounts support gas-abstracted transactions via EIP-5792.
       </p>
       <button
         onClick={() => open()}
@@ -192,7 +197,7 @@ function DisconnectedState() {
         Connect Wallet
       </button>
       <p className="text-xs text-muted-3 mt-6">
-        Supports MetaMask, WalletConnect, Coinbase, and 300+ wallets
+        Google login creates a smart account with EIP-5792 support
       </p>
     </div>
   );
