@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Kode Mono";
+  src: url("/fonts/KodeMono.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist.ttf");
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("/fonts/InstrumentSans.ttf");
+}
