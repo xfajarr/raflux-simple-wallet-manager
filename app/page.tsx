@@ -5,6 +5,7 @@ import { useAccount, useBalance, useDisconnect } from "wagmi";
 import { useAppKit } from "@reown/appkit/react";
 import { shortenAddress, formatBalance } from "./_libs/utils";
 import { SendTransaction } from "./_components/SendTransaction";
+import { DeploySmartAccount } from "./_components/DeploySmartAccount";
 
 export default function HomePage() {
   const [mounted, setMounted] = useState(false);
@@ -111,6 +112,9 @@ function WalletSection() {
           />
         </div>
       </div>
+
+      {/* Deploy Smart Account if needed */}
+      <DeploySmartAccount />
 
       {/* Send Transaction via Smart Account (EIP-5792) */}
       <SendTransaction />
