@@ -34,6 +34,7 @@ function Providers({ children }: { children: ReactNode }) {
             socials: ["google"],
             allWallets: true,
             emailShowWallets: true,
+            smartSessions: true
           }}
           allWallets="SHOW"
           themeMode="dark"
